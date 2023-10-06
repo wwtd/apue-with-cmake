@@ -6,6 +6,8 @@ project(apue_cmake
 
 # export compile commands
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+# enable debug mode
+set(CMAKE_BUILD_TYPE Debug)
 
 set(APUE_LIB_PATH "${PROJECT_SOURCE_DIR}/apue")
 set(CH1_SRC_PATH "${PROJECT_SOURCE_DIR}/ch1")
@@ -52,3 +54,5 @@ target_include_directories(apue PUBLIC "${APUE_LIB_PATH}/include")
 add_executable(ls1 "${CH1_SRC_PATH}/ls1.c")
 target_link_libraries(ls1 PUBLIC apue)
 
+add_executable(mycat "${CH1_SRC_PATH}/mycat.c")
+target_link_libraries(mycat PUBLIC apue)
