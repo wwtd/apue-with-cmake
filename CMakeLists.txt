@@ -4,9 +4,14 @@ project(apue_cmake
         LANGUAGES C
         )
 
+# export compile commands
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+
 set(APUE_LIB_PATH "${PROJECT_SOURCE_DIR}/apue")
+set(CH1_SRC_PATH "${PROJECT_SOURCE_DIR}/ch1")
 # message(${APUE_LIB_PATH})
 
+# build libapue.a
 add_library(apue STATIC 
             "${APUE_LIB_PATH}/lib/bufargs.c" 
             "${APUE_LIB_PATH}/lib/cliconn.c" 
@@ -42,3 +47,8 @@ add_library(apue STATIC
             "${APUE_LIB_PATH}/lib/sleep.c" 
 )
 target_include_directories(apue PUBLIC "${APUE_LIB_PATH}/include")
+
+# first executable ls1
+add_executable(ls1 "${CH1_SRC_PATH}/ls1.c")
+target_link_libraries(ls1 PUBLIC apue)
+
