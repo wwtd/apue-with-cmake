@@ -56,3 +56,12 @@ target_link_libraries(ls1 PUBLIC apue)
 
 add_executable(mycat "${CH1_SRC_PATH}/mycat.c")
 target_link_libraries(mycat PUBLIC apue)
+
+add_executable(getc "${CH1_SRC_PATH}/getc.c")
+target_link_libraries(getc PUBLIC apue)
+
+add_executable(pid "${CH1_SRC_PATH}/pid.c")
+target_link_libraries(pid PUBLIC apue)
+
+add_executable(shell1 "${CH1_SRC_PATH}/shell1.c")
+target_link_libraries(shell1 PUBLIC apue)
