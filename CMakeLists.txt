@@ -65,3 +65,9 @@ target_link_libraries(pid PUBLIC apue)
 
 add_executable(shell1 "${CH1_SRC_PATH}/shell1.c")
 target_link_libraries(shell1 PUBLIC apue)
+
+add_executable(testerr "${CH1_SRC_PATH}/testerr.c")
+target_link_libraries(testerr PUBLIC apue)
+
+add_executable(uidgid "${CH1_SRC_PATH}/uidgid.c")
+target_link_libraries(uidgid PUBLIC apue)
